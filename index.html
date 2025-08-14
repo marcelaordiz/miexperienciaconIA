@@ -108,31 +108,23 @@
         },
         body: JSON.stringify(jsonData)
       })
-     .then(response => response.text())
-.then(text => {
-  console.log("Respuesta del servidor:", text);
-  try {
-    const result = JSON.parse(text);
-    if (result.status === "success") {
-      responses.unshift(jsonData);
-      renderBoard();
-      closeModal();
-      alert("✅ Tu experiencia fue enviada con éxito.");
-    } else {
-      throw new Error("Respuesta inesperada del servidor");
-    }
-  } catch (error) {
-    console.error("❌ Error al interpretar la respuesta:", error);
-    alert("Hubo un problema al interpretar la respuesta del servidor.");
-  }
-})
-
-      })
-      .then(data => {
-        responses.unshift(jsonData);
-        renderBoard();
-        closeModal();
-        alert("✅ Tu experiencia fue enviada con éxito.");
+      .then(response => response.text())
+      .then(text => {
+        console.log("Respuesta del servidor:", text);
+        try {
+          const result = JSON.parse(text);
+          if (result.status === "success") {
+            responses.unshift(jsonData);
+            renderBoard();
+            closeModal();
+            alert("✅ Tu experiencia fue enviada con éxito.");
+          } else {
+            throw new Error("Respuesta inesperada del servidor");
+          }
+        } catch (error) {
+          console.error("❌ Error al interpretar la respuesta:", error);
+          alert("Hubo un problema al interpretar la respuesta del servidor.");
+        }
       })
       .catch(error => {
         console.error("❌ Error al enviar los datos:", error);
@@ -153,3 +145,4 @@
   </script>
 </body>
 </html>
+
