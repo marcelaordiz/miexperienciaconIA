@@ -101,7 +101,7 @@
         jsonData[key] = value;
       });
 
-      fetch("https://script.google.com/macros/s/AKfycbxX57WsuCcp4FmBtdA2oJTWJqcFBVmZrCpooef7q3gzVQgb5iAE_dsv-hVDk7rcjIR4/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbzFMuQTrIwcLne0IPkFYAq_QCAWff5PqPoUUIn-jgnC5Y1hdy4CnfsDvJZ2OMhQx2HU/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -133,7 +133,7 @@
     }
 
     // Cargar entradas existentes desde la hoja
-    fetch("https://script.google.com/macros/s/AKfycbxX57WsuCcp4FmBtdA2oJTWJqcFBVmZrCpooef7q3gzVQgb5iAE_dsv-hVDk7rcjIR4/exec")
+    fetch("https://script.google.com/macros/s/AKfycbzFMuQTrIwcLne0IPkFYAq_QCAWff5PqPoUUIn-jgnC5Y1hdy4CnfsDvJZ2OMhQx2HU/exec")
       .then(res => res.json())
       .then(data => {
         responses = data;
